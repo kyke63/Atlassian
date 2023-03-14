@@ -3,10 +3,11 @@ package com.nexigroup.spring.jira;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import com.nexigroup.spring.jira.infrastructure.*;
+import com.nexigroup.spring.jira.infrastructure.Response;
+import com.nexigroup.spring.jira.infrastructure.RestConnectorJIRA;
 
 public class ProjectClient {
 
@@ -48,15 +49,15 @@ public class ProjectClient {
 		JSONObject project = new JSONObject(new String(response.getResponseData()));
 		System.out.println(project.toString(1));
 		Map<String, String[]> projectMap = new HashMap<>();
-		projectMap.put("id", new String[] {project.getString("id")});
-		projectMap.put("key", new String[] {project.getString("key")});
-		projectMap.put("name", new String[] {project.getString("name")});
+		projectMap.put("id", new String[] { project.getString("id") });
+		projectMap.put("key", new String[] { project.getString("key") });
+		projectMap.put("name", new String[] { project.getString("name") });
 		JSONArray issueTypes = project.getJSONArray("issueTypes");
 		String[] issueTypeArray = new String[issueTypes.length()];
-		for (int i = 0 ; i < issueTypes.length(); i++) {
+		for (int i = 0; i < issueTypes.length(); i++) {
 			JSONObject issueType = issueTypes.getJSONObject(i);
-			issueTypeArray[i] = issueType.getString("id")+"@"+issueType.getString("name");
-			
+			issueTypeArray[i] = issueType.getString("id") + "@" + issueType.getString("name");
+
 		}
 		projectMap.put("issueTypes", issueTypeArray);
 		return projectMap;

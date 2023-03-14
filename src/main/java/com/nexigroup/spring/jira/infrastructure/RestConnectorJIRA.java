@@ -6,13 +6,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-
-import org.apache.commons.codec.binary.Base64;
-
-import java.util.Set;
 
 /**
  * This class keeps the state of the connection for the examples. This class is
@@ -96,9 +93,9 @@ public class RestConnectorJIRA {
 		}
 
 		HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
-        byte[] credBytes = (user + ":" + password).getBytes();
-        String credEncodedString = "Basic " + Base64.encodeBase64String(credBytes);
-        headers.put("Authorization", credEncodedString);
+		byte[] credBytes = (user + ":" + password).getBytes();
+		String credEncodedString = "Basic " + Base64.getEncoder().encodeToString(credBytes);
+		headers.put("Authorization", credEncodedString);
 		con.setRequestMethod(type);
 
 		prepareHttpRequest(con, headers, data);

@@ -1,4 +1,6 @@
 {
+	"created": [],
+	"removed": [],
 	"updated": [
 		{
 			"original": {
@@ -301,7 +303,10 @@
 									}
 								],
 								"value-transformation": {
-									"id": "copy-rich-text"
+									"id": "copy-rich-text",
+									"configuration": {
+										
+									}
 								}
 							},
 							{

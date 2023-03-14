@@ -1,16 +1,12 @@
 package com.nexigroup.spring.jira;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Nullable;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.web.client.RestClientException;
 
-import org.codehaus.jettison.json.JSONArray;
-import org.codehaus.jettison.json.JSONObject;
-
-import com.atlassian.jira.rest.client.api.RestClientException;
 import com.nexigroup.spring.jira.infrastructure.Response;
 import com.nexigroup.spring.jira.infrastructure.RestConnectorJIRA;
 
@@ -42,7 +38,7 @@ public class SearchClient {
 	 * @throws RestClientException in case of problems (connectivity, malformed
 	 *                             messages, invalid JQL query, etc.)
 	 */
-	public String searchJql(@Nullable String jql, @Nullable Integer maxResults, @Nullable Integer startAt) throws Exception {
+	public String searchJql(String jql, Integer maxResults, Integer startAt) throws Exception {
 		Map<String, Map<String, String>> customField = getCustomFields();
 		String defectsUrl = con.buildUrl("rest/api/latest/" + SEARCH_URI_PREFIX);
 		Map<String, String> map = new HashMap<String, String>();
@@ -67,14 +63,13 @@ public class SearchClient {
 					realname = customField.get(realname).get("name");
 				}
 				Object value = fields.get(name.toString());
-				if (!( "progress".equals(realname) || "votes".equals(realname)
-						|| "watches".equals(realname) || "aggregateprogress".equals(realname)
-						|| "Development".equals(realname))) {
+				if (!("progress".equals(realname) || "votes".equals(realname) || "watches".equals(realname)
+						|| "aggregateprogress".equals(realname) || "Development".equals(realname))) {
 					if (value instanceof JSONArray) {
 						if (((JSONArray) value).length() > 0) {
 							value = ((JSONArray) value).getJSONObject(0).getString("value");
 						} else {
-							//System.out.println(((JSONArray) value).toString(1));
+							// System.out.println(((JSONArray) value).toString(1));
 							value = "";
 						}
 					} else if (value instanceof JSONObject) {
@@ -86,7 +81,7 @@ public class SearchClient {
 							System.out.println(((JSONObject) value).toString(1));
 						}
 					}
-					System.out.println("'"+realname + "' <--> '" + value+"'");
+					System.out.println("'" + realname + "' <--> '" + value + "'");
 				}
 			}
 			System.out.println();

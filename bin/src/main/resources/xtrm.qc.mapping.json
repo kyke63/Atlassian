@@ -1,618 +1,19 @@
 {
+	"created": [],
+	"removed": [],
 	"updated": [
 		{
 			"original": {
 				"type": "com.tasktop.services.mapping.artifactEntityMapping",
 				"element": {
-					"id": "e734ea1d-579f-420b-b262-db6e980ea812",
+					"id": "909f9cd4-2114-4077-8602-cc3e2d9fafe3",
 					"artifact-model-id": "com.tasktop.artifacts.model.sli.defect",
 					"mappings": {
 						"field-mappings": [
 							{
 								"sources": [
 									{
-										"id": "BG_SEVERITY",
-										"label": "Severity",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "severity",
-											"label": "Severity"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "pt_-_severity",
-										"label": "PT - Severity",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "1-Critical",
-												"target": "5-Urgent"
-											},
-											{
-												"source": "2-Major",
-												"target": "4-Very High"
-											},
-											{
-												"source": "3-Average",
-												"target": "3-High"
-											},
-											{
-												"source": "4-Minor",
-												"target": "2-Medium"
-											},
-											{
-												"source": "5-Enhancement",
-												"target": "1-Low"
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "formattedid",
-										"label": "Formatted ID",
-										"type": "String",
-										"fieldTemplate": {
-											"standardField": "formattedid",
-											"label": "Formatted ID"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "id_defect_qc",
-										"label": "ID Defect QC",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-string"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_USER_09",
-										"label": "Priority",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "priority",
-										"label": "Priority",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "priority",
-											"id": "priority",
-											"label": "Priority"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "1-Resolve Immediately",
-												"target": "5 - ASAP"
-											},
-											{
-												"source": "2-Give High Attention",
-												"target": "4 - High"
-											},
-											{
-												"source": "3-Normal Queue",
-												"target": "3 - Medium"
-											},
-											{
-												"source": "4-Low Priority",
-												"target": "1 - Trivial"
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "formattedid",
-										"label": "Formatted ID",
-										"type": "String",
-										"fieldTemplate": {
-											"standardField": "formattedid",
-											"label": "Formatted ID"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "formatted_id",
-										"label": "Formatted ID",
-										"type": "String",
-										"fieldTemplate": {
-											"standardField": "formattedid",
-											"id": "formattedid",
-											"label": "Formatted ID"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-string"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_SUMMARY",
-										"label": "Summary",
-										"type": "String",
-										"fieldTemplate": {
-											"standardField": "summary",
-											"label": "Summary"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "summary",
-										"label": "Summary",
-										"type": "String",
-										"fieldTemplate": {
-											"standardField": "summary",
-											"id": "summary",
-											"label": "Summary"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-string"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_DESCRIPTION",
-										"label": "Description",
-										"type": "RichText",
-										"fieldTemplate": {
-											"standardField": "description",
-											"label": "Description"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "description",
-										"label": "Description",
-										"type": "RichText",
-										"fieldTemplate": {
-											"standardField": "description",
-											"id": "description",
-											"label": "Description"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-rich-text"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_STATUS",
-										"label": "Status",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"label": "Status"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "status",
-										"label": "Status",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"id": "status",
-											"label": "Status"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_DETECTED_BY",
-										"label": "Detected By",
-										"type": "PersonHandle",
-										"fieldTemplate": {
-											"standardField": "creator",
-											"label": "Creator"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "created_by",
-										"label": "Created By",
-										"type": "PersonHandle",
-										"fieldTemplate": {
-											"standardField": "creator",
-											"id": "creator",
-											"label": "Created By"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "person-handle-to-person-handle"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_RESPONSIBLE",
-										"label": "Assigned To",
-										"type": "PersonHandle",
-										"fieldTemplate": {
-											"standardField": "assignee",
-											"label": "Assignee"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "owner",
-										"label": "Owner",
-										"type": "PersonHandle",
-										"fieldTemplate": {
-											"standardField": "assignee",
-											"id": "assignee",
-											"label": "Owner"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "person-handle-to-person-handle"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_DETECTION_DATE",
-										"label": "Detected on Date",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"label": "Created"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "created",
-										"label": "Created",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"id": "created",
-											"label": "Created"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-date-time"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_VTS",
-										"label": "Modified",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "modified",
-											"label": "Modified"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "modified",
-										"label": "Modified",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "modified",
-											"id": "modified",
-											"label": "Modified"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-date-time"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_SUBJECT",
-										"label": "Subject",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "subject",
-										"label": "Subject",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-string"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "attachments",
-										"label": "Attachments",
-										"type": "List",
-										"componentType": "Attachment",
-										"fieldTemplate": {
-											"standardField": "attachments",
-											"label": "Attachments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "attachments",
-										"label": "attachments",
-										"type": "List",
-										"componentType": "Attachment",
-										"fieldTemplate": {
-											"standardField": "attachments",
-											"id": "attachments",
-											"label": "attachments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-multi-attachment"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_REPRODUCIBLE",
+										"id": "customfield_13703",
 										"label": "Reproducible",
 										"type": "ValueWithLabel",
 										"origin": {
@@ -643,7 +44,16 @@
 								"value-transformation": {
 									"id": "copy-value-with-label",
 									"configuration": {
-										"mappings": [],
+										"mappings": [
+											{
+												"source": "No",
+												"target": "N"
+											},
+											{
+												"source": "Yes",
+												"target": "Y"
+											}
+										],
 										"copyUnmappedByLabel": true
 									}
 								}
@@ -651,162 +61,8 @@
 							{
 								"sources": [
 									{
-										"id": "comments",
-										"label": "Comments",
-										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"label": "Comments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "comments",
-										"label": "comments",
-										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"id": "comments",
-											"label": "comments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-multi-comment",
-									"configuration": {
-										"source-language": "HP ALM HTML"
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_ACTUAL_FIX_TIME",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "actual_fix_time",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-long"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_CLOSING_VERSION",
-										"label": "Closed in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "closed_in_version",
-										"label": "Closed in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "value-with-label-to-string-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_DETECTION_VERSION",
-										"label": "Detected in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "detected_in_version",
-										"label": "Detected in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "value-with-label-to-string-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_USER_08",
-										"label": "Environment",
+										"id": "customfield_10101",
+										"label": "Ambiente",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -838,99 +94,22 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "Production",
+												"source": "Produzione",
 												"target": "Production"
 											},
 											{
-												"source": "UAT",
+												"source": "Test Esterno",
 												"target": "UAT"
 											},
 											{
-												"source": "Internal test",
+												"source": "Test Interno",
 												"target": "Internal Test"
 											},
 											{
 												
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
-								}
-							}
-						],
-						"constant-value-mappings": []
-					},
-					"repository": {
-						"id": "36c97bf1-69a9-4845-a5af-e6d20a19f0b7",
-						"connectorKind": "com.tasktop.connector.hp.alm"
-					}
-				}
-			},
-			"updated": {
-				"type": "com.tasktop.services.mapping.artifactEntityMapping",
-				"element": {
-					"id": "e734ea1d-579f-420b-b262-db6e980ea812",
-					"artifact-model-id": "com.tasktop.artifacts.model.sli.defect",
-					"mappings": {
-						"field-mappings": [
-							{
-								"sources": [
-									{
-										"id": "BG_SEVERITY",
-										"label": "Severity",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "severity",
-											"label": "Severity"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "pt_-_severity",
-										"label": "PT - Severity",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "1-Critical",
-												"target": "5-Urgent"
 											},
 											{
-												"source": "2-Major",
-												"target": "4-Very High"
-											},
-											{
-												"source": "3-Average",
-												"target": "3-High"
-											},
-											{
-												"source": "4-Minor",
-												"target": "2-Medium"
-											},
-											{
-												"source": "5-Enhancement",
-												"target": "1-Low"
+												"source": "Sviluppo"
 											}
 										],
 										"copyUnmappedByLabel": true
@@ -940,13 +119,9 @@
 							{
 								"sources": [
 									{
-										"id": "formattedid",
-										"label": "Formatted ID",
+										"id": "customfield_11000",
+										"label": "ID QC",
 										"type": "String",
-										"fieldTemplate": {
-											"standardField": "formattedid",
-											"label": "Formatted ID"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -979,69 +154,8 @@
 							{
 								"sources": [
 									{
-										"id": "BG_USER_09",
-										"label": "Priority",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "priority",
-										"label": "Priority",
-										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "priority",
-											"id": "priority",
-											"label": "Priority"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "1-Resolve Immediately",
-												"target": "5 - ASAP"
-											},
-											{
-												"source": "2-Give High Attention",
-												"target": "4 - High"
-											},
-											{
-												"source": "3-Normal Queue",
-												"target": "3 - Medium"
-											},
-											{
-												"source": "4-Low Priority",
-												"target": "1 - Trivial"
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
 										"id": "formattedid",
-										"label": "Formatted ID",
+										"label": "Key",
 										"type": "String",
 										"fieldTemplate": {
 											"standardField": "formattedid",
@@ -1084,7 +198,7 @@
 							{
 								"sources": [
 									{
-										"id": "BG_SUMMARY",
+										"id": "summary",
 										"label": "Summary",
 										"type": "String",
 										"fieldTemplate": {
@@ -1128,7 +242,7 @@
 							{
 								"sources": [
 									{
-										"id": "BG_DESCRIPTION",
+										"id": "description",
 										"label": "Description",
 										"type": "RichText",
 										"fieldTemplate": {
@@ -1175,7 +289,112 @@
 							{
 								"sources": [
 									{
-										"id": "BG_STATUS",
+										"id": "customfield_11430",
+										"label": "PT - Severity",
+										"type": "ValueWithLabel",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "pt_-_severity",
+										"label": "PT - Severity",
+										"type": "ValueWithLabel",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [],
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"id": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [
+											{
+												"source": "Critical",
+												"target": "5 - ASAP"
+											},
+											{
+												"source": "Highest",
+												"target": "4 - High"
+											},
+											{
+												"source": "High",
+												"target": "3 - Medium"
+											},
+											{
+												"source": "Medium",
+												"target": "2 - Low"
+											}
+										],
+										"unmappedValueDefault": "1 - Trivial",
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "status",
 										"label": "Status",
 										"type": "ValueWithLabel",
 										"fieldTemplate": {
@@ -1215,16 +434,53 @@
 								"value-transformation": {
 									"id": "copy-value-with-label",
 									"configuration": {
-										"mappings": [],
-										"copyUnmappedByLabel": true
+										"mappings": [
+											{
+												"source": "Reopened",
+												"target": "Reopen"
+											},
+											{
+												"source": "New",
+												"target": "New"
+											},
+											{
+												"source": "Duplicated",
+												"target": "Duplicated"
+											},
+											{
+												"source": "Waiting to release",
+												"target": "Waiting to release"
+											},
+											{
+												"source": "Rejected",
+												"target": "Rejected"
+											},
+											{
+												"source": "Postponed",
+												"target": "Postponed"
+											},
+											{
+												"source": "Open",
+												"target": "Open"
+											},
+											{
+												"source": "Fixed",
+												"target": "Fixed"
+											},
+											{
+												"source": "Done",
+												"target": "Closed"
+											}
+										],
+										"copyUnmappedByLabel": false
 									}
 								}
 							},
 							{
 								"sources": [
 									{
-										"id": "BG_DETECTED_BY",
-										"label": "Detected By",
+										"id": "reporter",
+										"label": "Reporter",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "creator",
@@ -1248,7 +504,7 @@
 										"fieldTemplate": {
 											"standardField": "creator",
 											"id": "creator",
-											"label": "Created By"
+											"label": "Creator"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1267,8 +523,8 @@
 							{
 								"sources": [
 									{
-										"id": "BG_RESPONSIBLE",
-										"label": "Assigned To",
+										"id": "assignee",
+										"label": "Assignee",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "assignee",
@@ -1292,7 +548,7 @@
 										"fieldTemplate": {
 											"standardField": "assignee",
 											"id": "assignee",
-											"label": "Owner"
+											"label": "Assignee"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1311,8 +567,8 @@
 							{
 								"sources": [
 									{
-										"id": "BG_DETECTION_DATE",
-										"label": "Detected on Date",
+										"id": "created",
+										"label": "Created",
 										"type": "Date",
 										"fieldTemplate": {
 											"standardField": "created",
@@ -1355,8 +611,8 @@
 							{
 								"sources": [
 									{
-										"id": "BG_VTS",
-										"label": "Modified",
+										"id": "updated",
+										"label": "Updated",
 										"type": "Date",
 										"fieldTemplate": {
 											"standardField": "modified",
@@ -1399,7 +655,44 @@
 							{
 								"sources": [
 									{
-										"id": "BG_SUBJECT",
+										"id": "10000-out",
+										"label": "blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "blocks",
+										"label": "Blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-artifactlink"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "customfield_11314",
 										"label": "Subject",
 										"type": "String",
 										"origin": {
@@ -1434,8 +727,8 @@
 							{
 								"sources": [
 									{
-										"id": "attachments",
-										"label": "Attachments",
+										"id": "attachment",
+										"label": "Attachment",
 										"type": "List",
 										"componentType": "Attachment",
 										"fieldTemplate": {
@@ -1461,7 +754,7 @@
 										"fieldTemplate": {
 											"standardField": "attachments",
 											"id": "attachments",
-											"label": "attachments"
+											"label": "Attachments"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1480,7 +773,108 @@
 							{
 								"sources": [
 									{
-										"id": "BG_REPRODUCIBLE",
+										"id": "customfield_11317",
+										"label": "Fixed by",
+										"type": "PersonHandle",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "fixed_by",
+										"label": "Fixed By",
+										"type": "List",
+										"componentType": "PersonHandle",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "person-to-multi-person"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "comment",
+										"label": "Comment",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "comments",
+										"label": "comments",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"id": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-comment",
+									"configuration": {
+										
+									}
+								}
+							}
+						],
+						"constant-value-mappings": []
+					},
+					"repository": {
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
+					}
+				}
+			},
+			"updated": {
+				"type": "com.tasktop.services.mapping.artifactEntityMapping",
+				"element": {
+					"id": "909f9cd4-2114-4077-8602-cc3e2d9fafe3",
+					"artifact-model-id": "com.tasktop.artifacts.model.sli.defect",
+					"mappings": {
+						"field-mappings": [
+							{
+								"sources": [
+									{
+										"id": "customfield_13703",
 										"label": "Reproducible",
 										"type": "ValueWithLabel",
 										"origin": {
@@ -1511,7 +905,16 @@
 								"value-transformation": {
 									"id": "copy-value-with-label",
 									"configuration": {
-										"mappings": [],
+										"mappings": [
+											{
+												"source": "No",
+												"target": "N"
+											},
+											{
+												"source": "Yes",
+												"target": "Y"
+											}
+										],
 										"copyUnmappedByLabel": true
 									}
 								}
@@ -1519,162 +922,8 @@
 							{
 								"sources": [
 									{
-										"id": "comments",
-										"label": "Comments",
-										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"label": "Comments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "comments",
-										"label": "comments",
-										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"id": "comments",
-											"label": "comments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-multi-comment",
-									"configuration": {
-										
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_ACTUAL_FIX_TIME",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "actual_fix_time",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-long"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_CLOSING_VERSION",
-										"label": "Closed in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "closed_in_version",
-										"label": "Closed in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "value-with-label-to-string-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_DETECTION_VERSION",
-										"label": "Detected in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "detected_in_version",
-										"label": "Detected in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "value-with-label-to-string-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "BG_USER_08",
-										"label": "Environment",
+										"id": "customfield_10101",
+										"label": "Ambiente",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1706,22 +955,768 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "Production",
+												"source": "Produzione",
 												"target": "Production"
 											},
 											{
-												"source": "UAT",
+												"source": "Test Esterno",
 												"target": "UAT"
 											},
 											{
-												"source": "Internal test",
+												"source": "Test Interno",
 												"target": "Internal Test"
 											},
 											{
 												
+											},
+											{
+												"source": "Sviluppo"
 											}
 										],
 										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "customfield_11000",
+										"label": "ID QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "id_defect_qc",
+										"label": "ID Defect QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "formattedid",
+										"label": "Key",
+										"type": "String",
+										"fieldTemplate": {
+											"standardField": "formattedid",
+											"label": "Formatted ID"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "formatted_id",
+										"label": "Formatted ID",
+										"type": "String",
+										"fieldTemplate": {
+											"standardField": "formattedid",
+											"id": "formattedid",
+											"label": "Formatted ID"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "summary",
+										"label": "Summary",
+										"type": "String",
+										"fieldTemplate": {
+											"standardField": "summary",
+											"label": "Summary"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "summary",
+										"label": "Summary",
+										"type": "String",
+										"fieldTemplate": {
+											"standardField": "summary",
+											"id": "summary",
+											"label": "Summary"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "description",
+										"label": "Description",
+										"type": "RichText",
+										"fieldTemplate": {
+											"standardField": "description",
+											"label": "Description"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "description",
+										"label": "Description",
+										"type": "RichText",
+										"fieldTemplate": {
+											"standardField": "description",
+											"id": "description",
+											"label": "Description"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-rich-text",
+									"configuration": {
+										
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "customfield_11430",
+										"label": "PT - Severity",
+										"type": "ValueWithLabel",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "pt_-_severity",
+										"label": "PT - Severity",
+										"type": "ValueWithLabel",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [],
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"id": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [
+											{
+												"source": "Critical",
+												"target": "5 - ASAP"
+											},
+											{
+												"source": "Highest",
+												"target": "4 - High"
+											},
+											{
+												"source": "High",
+												"target": "3 - Medium"
+											},
+											{
+												"source": "Medium",
+												"target": "2 - Low"
+											}
+										],
+										"unmappedValueDefault": "1 - Trivial",
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "status",
+										"label": "Status",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "status",
+											"label": "Status"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "status",
+										"label": "Status",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "status",
+											"id": "status",
+											"label": "Status"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [
+											{
+												"source": "Reopened",
+												"target": "Reopen"
+											},
+											{
+												"source": "New",
+												"target": "New"
+											},
+											{
+												"source": "Duplicated",
+												"target": "Duplicated"
+											},
+											{
+												"source": "Waiting to release",
+												"target": "Waiting to release"
+											},
+											{
+												"source": "Rejected",
+												"target": "Rejected"
+											},
+											{
+												"source": "Postponed",
+												"target": "Postponed"
+											},
+											{
+												"source": "Open",
+												"target": "Open"
+											},
+											{
+												"source": "Fixed",
+												"target": "Fixed"
+											},
+											{
+												"source": "Done",
+												"target": "Closed"
+											},
+											{
+												"source": "In Progress",
+												"target": "In Progress"
+											}
+										],
+										"copyUnmappedByLabel": false
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "reporter",
+										"label": "Reporter",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "creator",
+											"label": "Creator"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "created_by",
+										"label": "Created By",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "creator",
+											"id": "creator",
+											"label": "Creator"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "person-handle-to-person-handle"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "assignee",
+										"label": "Assignee",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "assignee",
+											"label": "Assignee"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "owner",
+										"label": "Owner",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "assignee",
+											"id": "assignee",
+											"label": "Assignee"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "person-handle-to-person-handle"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "created",
+										"label": "Created",
+										"type": "Date",
+										"fieldTemplate": {
+											"standardField": "created",
+											"label": "Created"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "created",
+										"label": "Created",
+										"type": "Date",
+										"fieldTemplate": {
+											"standardField": "created",
+											"id": "created",
+											"label": "Created"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-date-time"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "updated",
+										"label": "Updated",
+										"type": "Date",
+										"fieldTemplate": {
+											"standardField": "modified",
+											"label": "Modified"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "modified",
+										"label": "Modified",
+										"type": "Date",
+										"fieldTemplate": {
+											"standardField": "modified",
+											"id": "modified",
+											"label": "Modified"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-date-time"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "10000-out",
+										"label": "blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "blocks",
+										"label": "Blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-artifactlink"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "customfield_11314",
+										"label": "Subject",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "subject",
+										"label": "Subject",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "attachment",
+										"label": "Attachment",
+										"type": "List",
+										"componentType": "Attachment",
+										"fieldTemplate": {
+											"standardField": "attachments",
+											"label": "Attachments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "attachments",
+										"label": "attachments",
+										"type": "List",
+										"componentType": "Attachment",
+										"fieldTemplate": {
+											"standardField": "attachments",
+											"id": "attachments",
+											"label": "Attachments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-attachment"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "customfield_11317",
+										"label": "Fixed by",
+										"type": "PersonHandle",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "fixed_by",
+										"label": "Fixed By",
+										"type": "List",
+										"componentType": "PersonHandle",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "person-to-multi-person"
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "comment",
+										"label": "Comment",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "comments",
+										"label": "comments",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"id": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-comment",
+									"configuration": {
+										
 									}
 								}
 							}
@@ -1729,8 +1724,8 @@
 						"constant-value-mappings": []
 					},
 					"repository": {
-						"id": "36c97bf1-69a9-4845-a5af-e6d20a19f0b7",
-						"connectorKind": "com.tasktop.connector.hp.alm"
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
 					}
 				}
 			}
@@ -1739,15 +1734,15 @@
 			"original": {
 				"type": "com.tasktop.services.mapping.artifactEntityMapping",
 				"element": {
-					"id": "a05f294c-3609-43dd-afb0-4217c703f8cd",
+					"id": "78414a15-adf8-40fd-9393-261724fdfac9",
 					"artifact-model-id": "com.tasktop.artifacts.model.sli.defect",
 					"mappings": {
 						"field-mappings": [
 							{
 								"sources": [
 									{
-										"id": "pt_-_severity",
-										"label": "PT - Severity",
+										"id": "reproducible",
+										"label": "Reproducible",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1761,13 +1756,9 @@
 								],
 								"targets": [
 									{
-										"id": "BG_SEVERITY",
-										"label": "Severity",
+										"id": "customfield_13703",
+										"label": "Reproducible",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "severity",
-											"label": "Severity"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -1783,24 +1774,12 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "5-Urgent",
-												"target": "1-Critical"
+												"source": "N",
+												"target": "No"
 											},
 											{
-												"source": "4-Very High",
-												"target": "2-Major"
-											},
-											{
-												"source": "3-High",
-												"target": "3-Average"
-											},
-											{
-												"source": "2-Medium",
-												"target": "4-Minor"
-											},
-											{
-												"source": "1-Low",
-												"target": "5-Enhancement"
+												"source": "Y",
+												"target": "Yes"
 											}
 										],
 										"copyUnmappedByLabel": true
@@ -1810,14 +1789,9 @@
 							{
 								"sources": [
 									{
-										"id": "priority",
-										"label": "Priority",
+										"id": "environment",
+										"label": "Environment",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "priority",
-											"id": "priority",
-											"label": "Priority"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -1830,8 +1804,8 @@
 								],
 								"targets": [
 									{
-										"id": "BG_USER_09",
-										"label": "Priority",
+										"id": "customfield_10101",
+										"label": "Ambiente",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -1848,28 +1822,58 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "5 - ASAP",
-												"target": "1-Resolve Immediately"
+												"source": "Production",
+												"target": "Produzione"
 											},
 											{
-												"source": "4 - High",
-												"target": "2-Give High Attention"
+												"source": "UAT",
+												"target": "Test Esterno"
 											},
 											{
-												"source": "3 - Medium",
-												"target": "3-Normal Queue"
+												"source": "Internal Test",
+												"target": "Test Interno"
 											},
 											{
-												"source": "1 - Trivial",
-												"target": "4-Low Priority"
-											},
-											{
-												"source": "2 - Low",
-												"target": "4-Low Priority"
+												
 											}
 										],
 										"copyUnmappedByLabel": true
 									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "id_defect_qc",
+										"label": "ID Defect QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "customfield_11000",
+										"label": "ID QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
 								}
 							},
 							{
@@ -1895,7 +1899,7 @@
 								],
 								"targets": [
 									{
-										"id": "BG_SUMMARY",
+										"id": "summary",
 										"label": "Summary",
 										"type": "String",
 										"fieldTemplate": {
@@ -1939,7 +1943,7 @@
 								],
 								"targets": [
 									{
-										"id": "BG_DESCRIPTION",
+										"id": "description",
 										"label": "Description",
 										"type": "RichText",
 										"fieldTemplate": {
@@ -1966,14 +1970,9 @@
 							{
 								"sources": [
 									{
-										"id": "status",
-										"label": "Status",
+										"id": "pt_-_severity",
+										"label": "PT - Severity",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"id": "status",
-											"label": "Status"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -1986,13 +1985,9 @@
 								],
 								"targets": [
 									{
-										"id": "BG_STATUS",
-										"label": "Status",
+										"id": "customfield_11430",
+										"label": "PT - Severity",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"label": "Status"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2014,13 +2009,13 @@
 							{
 								"sources": [
 									{
-										"id": "created_by",
-										"label": "Created By",
-										"type": "PersonHandle",
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
 										"fieldTemplate": {
-											"standardField": "creator",
-											"id": "creator",
-											"label": "Created By"
+											"standardField": "priority",
+											"id": "priority",
+											"label": "Priority"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2034,8 +2029,77 @@
 								],
 								"targets": [
 									{
-										"id": "BG_DETECTED_BY",
-										"label": "Detected By",
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [
+											{
+												"source": "5 - ASAP",
+												"target": "Critical"
+											},
+											{
+												"source": "4 - High",
+												"target": "Highest"
+											},
+											{
+												"source": "3 - Medium",
+												"target": "High"
+											},
+											{
+												"source": "2 - Low",
+												"target": "Medium"
+											},
+											{
+												"source": "1 - Trivial",
+												"target": "Low"
+											}
+										],
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "created_by",
+										"label": "Created By",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "creator",
+											"id": "creator",
+											"label": "Creator"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "reporter",
+										"label": "Reporter",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "creator",
@@ -2064,7 +2128,7 @@
 										"fieldTemplate": {
 											"standardField": "assignee",
 											"id": "assignee",
-											"label": "Owner"
+											"label": "Assignee"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2078,8 +2142,8 @@
 								],
 								"targets": [
 									{
-										"id": "BG_RESPONSIBLE",
-										"label": "Assigned To",
+										"id": "assignee",
+										"label": "Assignee",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "assignee",
@@ -2102,98 +2166,10 @@
 							{
 								"sources": [
 									{
-										"id": "created",
-										"label": "Created",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"id": "created",
-											"label": "Created"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_DETECTION_DATE",
-										"label": "Detected on Date",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"label": "Created"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-date-time"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "reproducible",
-										"label": "Reproducible",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_REPRODUCIBLE",
-										"label": "Reproducible",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "comments",
-										"label": "comments",
+										"id": "blocks",
+										"label": "Blocks",
 										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"id": "comments",
-											"label": "comments"
-										},
+										"componentType": "ArtifactLink",
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2206,14 +2182,10 @@
 								],
 								"targets": [
 									{
-										"id": "comments",
-										"label": "Comments",
+										"id": "10000-out",
+										"label": "blocks",
 										"type": "List",
-										"componentType": "Comment",
-										"fieldTemplate": {
-											"standardField": "comments",
-											"label": "Comments"
-										},
+										"componentType": "ArtifactLink",
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2225,170 +2197,7 @@
 									}
 								],
 								"value-transformation": {
-									"id": "copy-multi-comment",
-									"configuration": {
-										"target-language": "HP ALM HTML"
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "actual_fix_time",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_ACTUAL_FIX_TIME",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-long"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "closed_in_version",
-										"label": "Closed in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_CLOSING_VERSION",
-										"label": "Closed in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "string-to-value-with-label-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "detected_in_version",
-										"label": "Detected in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_DETECTION_VERSION",
-										"label": "Detected in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "string-to-value-with-label-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "environment",
-										"label": "Environment",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_USER_08",
-										"label": "Environment",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "Production",
-												"target": "Production"
-											},
-											{
-												"source": "UAT",
-												"target": "UAT"
-											},
-											{
-												"source": "Internal Test",
-												"target": "Internal test"
-											},
-											{
-												
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
+									"id": "copy-multi-artifactlink"
 								}
 							},
 							{
@@ -2401,7 +2210,7 @@
 										"fieldTemplate": {
 											"standardField": "attachments",
 											"id": "attachments",
-											"label": "attachments"
+											"label": "Attachments"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2415,8 +2224,8 @@
 								],
 								"targets": [
 									{
-										"id": "attachments",
-										"label": "Attachments",
+										"id": "attachment",
+										"label": "Attachment",
 										"type": "List",
 										"componentType": "Attachment",
 										"fieldTemplate": {
@@ -2436,28 +2245,77 @@
 								"value-transformation": {
 									"id": "copy-multi-attachment"
 								}
+							},
+							{
+								"sources": [
+									{
+										"id": "comments",
+										"label": "comments",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"id": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "comment",
+										"label": "Comment",
+										"type": "List",
+										"componentType": "Comment",
+										"fieldTemplate": {
+											"standardField": "comments",
+											"label": "Comments"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-multi-comment",
+									"configuration": {
+										
+									}
+								}
 							}
 						],
 						"constant-value-mappings": []
 					},
 					"repository": {
-						"id": "36c97bf1-69a9-4845-a5af-e6d20a19f0b7",
-						"connectorKind": "com.tasktop.connector.hp.alm"
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
 					}
 				}
 			},
 			"updated": {
 				"type": "com.tasktop.services.mapping.artifactEntityMapping",
 				"element": {
-					"id": "a05f294c-3609-43dd-afb0-4217c703f8cd",
+					"id": "78414a15-adf8-40fd-9393-261724fdfac9",
 					"artifact-model-id": "com.tasktop.artifacts.model.sli.defect",
 					"mappings": {
 						"field-mappings": [
 							{
 								"sources": [
 									{
-										"id": "pt_-_severity",
-										"label": "PT - Severity",
+										"id": "reproducible",
+										"label": "Reproducible",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2471,13 +2329,9 @@
 								],
 								"targets": [
 									{
-										"id": "BG_SEVERITY",
-										"label": "Severity",
+										"id": "customfield_13703",
+										"label": "Reproducible",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "severity",
-											"label": "Severity"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2493,24 +2347,12 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "5-Urgent",
-												"target": "1-Critical"
+												"source": "N",
+												"target": "No"
 											},
 											{
-												"source": "4-Very High",
-												"target": "2-Major"
-											},
-											{
-												"source": "3-High",
-												"target": "3-Average"
-											},
-											{
-												"source": "2-Medium",
-												"target": "4-Minor"
-											},
-											{
-												"source": "1-Low",
-												"target": "5-Enhancement"
+												"source": "Y",
+												"target": "Yes"
 											}
 										],
 										"copyUnmappedByLabel": true
@@ -2520,14 +2362,9 @@
 							{
 								"sources": [
 									{
-										"id": "priority",
-										"label": "Priority",
+										"id": "environment",
+										"label": "Environment",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "priority",
-											"id": "priority",
-											"label": "Priority"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2540,8 +2377,8 @@
 								],
 								"targets": [
 									{
-										"id": "BG_USER_09",
-										"label": "Priority",
+										"id": "customfield_10101",
+										"label": "Ambiente",
 										"type": "ValueWithLabel",
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2558,28 +2395,58 @@
 									"configuration": {
 										"mappings": [
 											{
-												"source": "5 - ASAP",
-												"target": "1-Resolve Immediately"
+												"source": "Production",
+												"target": "Produzione"
 											},
 											{
-												"source": "4 - High",
-												"target": "2-Give High Attention"
+												"source": "UAT",
+												"target": "Test Esterno"
 											},
 											{
-												"source": "3 - Medium",
-												"target": "3-Normal Queue"
+												"source": "Internal Test",
+												"target": "Test Interno"
 											},
 											{
-												"source": "1 - Trivial",
-												"target": "4-Low Priority"
-											},
-											{
-												"source": "2 - Low",
-												"target": "4-Low Priority"
+												
 											}
 										],
 										"copyUnmappedByLabel": true
 									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "id_defect_qc",
+										"label": "ID Defect QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "customfield_11000",
+										"label": "ID QC",
+										"type": "String",
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-string"
 								}
 							},
 							{
@@ -2605,7 +2472,7 @@
 								],
 								"targets": [
 									{
-										"id": "BG_SUMMARY",
+										"id": "summary",
 										"label": "Summary",
 										"type": "String",
 										"fieldTemplate": {
@@ -2649,7 +2516,7 @@
 								],
 								"targets": [
 									{
-										"id": "BG_DESCRIPTION",
+										"id": "description",
 										"label": "Description",
 										"type": "RichText",
 										"fieldTemplate": {
@@ -2676,14 +2543,9 @@
 							{
 								"sources": [
 									{
-										"id": "status",
-										"label": "Status",
+										"id": "pt_-_severity",
+										"label": "PT - Severity",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"id": "status",
-											"label": "Status"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2696,13 +2558,9 @@
 								],
 								"targets": [
 									{
-										"id": "BG_STATUS",
-										"label": "Status",
+										"id": "customfield_11430",
+										"label": "PT - Severity",
 										"type": "ValueWithLabel",
-										"fieldTemplate": {
-											"standardField": "status",
-											"label": "Status"
-										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2724,13 +2582,13 @@
 							{
 								"sources": [
 									{
-										"id": "created_by",
-										"label": "Created By",
-										"type": "PersonHandle",
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
 										"fieldTemplate": {
-											"standardField": "creator",
-											"id": "creator",
-											"label": "Created By"
+											"standardField": "priority",
+											"id": "priority",
+											"label": "Priority"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2744,8 +2602,77 @@
 								],
 								"targets": [
 									{
-										"id": "BG_DETECTED_BY",
-										"label": "Detected By",
+										"id": "priority",
+										"label": "Priority",
+										"type": "ValueWithLabel",
+										"fieldTemplate": {
+											"standardField": "priority",
+											"label": "Priority"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"value-transformation": {
+									"id": "copy-value-with-label",
+									"configuration": {
+										"mappings": [
+											{
+												"source": "5 - ASAP",
+												"target": "Critical"
+											},
+											{
+												"source": "4 - High",
+												"target": "Highest"
+											},
+											{
+												"source": "3 - Medium",
+												"target": "High"
+											},
+											{
+												"source": "2 - Low",
+												"target": "Medium"
+											},
+											{
+												"source": "1 - Trivial",
+												"target": "Low"
+											}
+										],
+										"copyUnmappedByLabel": true
+									}
+								}
+							},
+							{
+								"sources": [
+									{
+										"id": "created_by",
+										"label": "Created By",
+										"type": "PersonHandle",
+										"fieldTemplate": {
+											"standardField": "creator",
+											"id": "creator",
+											"label": "Creator"
+										},
+										"origin": {
+											"entityType": "ARTIFACT",
+											"entityLocation": {
+												"jointId": {
+													
+												}
+											}
+										}
+									}
+								],
+								"targets": [
+									{
+										"id": "reporter",
+										"label": "Reporter",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "creator",
@@ -2774,7 +2701,7 @@
 										"fieldTemplate": {
 											"standardField": "assignee",
 											"id": "assignee",
-											"label": "Owner"
+											"label": "Assignee"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2788,8 +2715,8 @@
 								],
 								"targets": [
 									{
-										"id": "BG_RESPONSIBLE",
-										"label": "Assigned To",
+										"id": "assignee",
+										"label": "Assignee",
 										"type": "PersonHandle",
 										"fieldTemplate": {
 											"standardField": "assignee",
@@ -2812,14 +2739,10 @@
 							{
 								"sources": [
 									{
-										"id": "created",
-										"label": "Created",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"id": "created",
-											"label": "Created"
-										},
+										"id": "blocks",
+										"label": "Blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2832,13 +2755,10 @@
 								],
 								"targets": [
 									{
-										"id": "BG_DETECTION_DATE",
-										"label": "Detected on Date",
-										"type": "Date",
-										"fieldTemplate": {
-											"standardField": "created",
-											"label": "Created"
-										},
+										"id": "10000-out",
+										"label": "blocks",
+										"type": "List",
+										"componentType": "ArtifactLink",
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2850,15 +2770,21 @@
 									}
 								],
 								"value-transformation": {
-									"id": "copy-date-time"
+									"id": "copy-multi-artifactlink"
 								}
 							},
 							{
 								"sources": [
 									{
-										"id": "reproducible",
-										"label": "Reproducible",
-										"type": "ValueWithLabel",
+										"id": "attachments",
+										"label": "attachments",
+										"type": "List",
+										"componentType": "Attachment",
+										"fieldTemplate": {
+											"standardField": "attachments",
+											"id": "attachments",
+											"label": "Attachments"
+										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2871,9 +2797,14 @@
 								],
 								"targets": [
 									{
-										"id": "BG_REPRODUCIBLE",
-										"label": "Reproducible",
-										"type": "ValueWithLabel",
+										"id": "attachment",
+										"label": "Attachment",
+										"type": "List",
+										"componentType": "Attachment",
+										"fieldTemplate": {
+											"standardField": "attachments",
+											"label": "Attachments"
+										},
 										"origin": {
 											"entityType": "ARTIFACT",
 											"entityLocation": {
@@ -2885,11 +2816,7 @@
 									}
 								],
 								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [],
-										"copyUnmappedByLabel": true
-									}
+									"id": "copy-multi-attachment"
 								}
 							},
 							{
@@ -2902,7 +2829,7 @@
 										"fieldTemplate": {
 											"standardField": "comments",
 											"id": "comments",
-											"label": "comments"
+											"label": "Comments"
 										},
 										"origin": {
 											"entityType": "ARTIFACT",
@@ -2916,8 +2843,8 @@
 								],
 								"targets": [
 									{
-										"id": "comments",
-										"label": "Comments",
+										"id": "comment",
+										"label": "Comment",
 										"type": "List",
 										"componentType": "Comment",
 										"fieldTemplate": {
@@ -2940,222 +2867,69 @@
 										
 									}
 								}
-							},
-							{
-								"sources": [
-									{
-										"id": "actual_fix_time",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_ACTUAL_FIX_TIME",
-										"label": "Actual Fix Time",
-										"type": "Long",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-long"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "closed_in_version",
-										"label": "Closed in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_CLOSING_VERSION",
-										"label": "Closed in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "string-to-value-with-label-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "detected_in_version",
-										"label": "Detected in Version",
-										"type": "String",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_DETECTION_VERSION",
-										"label": "Detected in Version",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "string-to-value-with-label-by-label"
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "environment",
-										"label": "Environment",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "BG_USER_08",
-										"label": "Environment",
-										"type": "ValueWithLabel",
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-value-with-label",
-									"configuration": {
-										"mappings": [
-											{
-												"source": "Production",
-												"target": "Production"
-											},
-											{
-												"source": "UAT",
-												"target": "UAT"
-											},
-											{
-												"source": "Internal Test",
-												"target": "Internal test"
-											},
-											{
-												
-											}
-										],
-										"copyUnmappedByLabel": true
-									}
-								}
-							},
-							{
-								"sources": [
-									{
-										"id": "attachments",
-										"label": "attachments",
-										"type": "List",
-										"componentType": "Attachment",
-										"fieldTemplate": {
-											"standardField": "attachments",
-											"id": "attachments",
-											"label": "attachments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"targets": [
-									{
-										"id": "attachments",
-										"label": "Attachments",
-										"type": "List",
-										"componentType": "Attachment",
-										"fieldTemplate": {
-											"standardField": "attachments",
-											"label": "Attachments"
-										},
-										"origin": {
-											"entityType": "ARTIFACT",
-											"entityLocation": {
-												"jointId": {
-													
-												}
-											}
-										}
-									}
-								],
-								"value-transformation": {
-									"id": "copy-multi-attachment"
-								}
 							}
 						],
 						"constant-value-mappings": []
 					},
 					"repository": {
-						"id": "36c97bf1-69a9-4845-a5af-e6d20a19f0b7",
-						"connectorKind": "com.tasktop.connector.hp.alm"
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
 					}
+				}
+			}
+		},
+		{
+			"original": {
+				"type": "com.tasktop.services.collection",
+				"element": {
+					"id": "7028265c-3fb8-44a4-aa39-ea269dd5b952",
+					"name": "Defect XTRM Jira",
+					"artifactModelId": "com.tasktop.artifacts.model.sli.defect",
+					"repository": {
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
+					},
+					"partitions": [
+						"5aa76f6a-4c50-43a2-b25c-7283ad8c0894"
+					],
+					"mappingToModelIds": [
+						"909f9cd4-2114-4077-8602-cc3e2d9fafe3"
+					],
+					"mappingFromModelIds": [
+						"78414a15-adf8-40fd-9393-261724fdfac9"
+					],
+					"artifactJointIds": [],
+					"type": "WORK_ITEM",
+					"modelMapping": "886aedd2-2ca3-4c67-b085-76dab49909f0",
+					"useAllPartitionsForOptions": false
+				}
+			},
+			"updated": {
+				"type": "com.tasktop.services.collection",
+				"element": {
+					"id": "7028265c-3fb8-44a4-aa39-ea269dd5b952",
+					"name": "Defect XTRM Jira",
+					"artifactModelId": "com.tasktop.artifacts.model.sli.defect",
+					"repository": {
+						"id": "56c5ab15-a1e6-4acc-a264-ec6affde2429",
+						"connectorKind": "com.tasktop.connector.atlassian.jira"
+					},
+					"partitions": [
+						"5aa76f6a-4c50-43a2-b25c-7283ad8c0894"
+					],
+					"mappingToModelIds": [
+						"909f9cd4-2114-4077-8602-cc3e2d9fafe3"
+					],
+					"mappingFromModelIds": [
+						"78414a15-adf8-40fd-9393-261724fdfac9"
+					],
+					"artifactJointIds": [],
+					"type": "WORK_ITEM",
+					"modelMapping": "886aedd2-2ca3-4c67-b085-76dab49909f0",
+					"useAllPartitionsForOptions": false
 				}
 			}
 		}
 	]
 }
+
