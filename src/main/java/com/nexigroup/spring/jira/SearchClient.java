@@ -1,5 +1,6 @@
 package com.nexigroup.spring.jira;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,7 +39,7 @@ public class SearchClient {
 	 * @throws RestClientException in case of problems (connectivity, malformed
 	 *                             messages, invalid JQL query, etc.)
 	 */
-	public String searchJql(String jql, Integer maxResults, Integer startAt) throws Exception {
+	public SearchResult searchJql(String jql, Integer maxResults, Integer startAt) throws Exception {
 		Map<String, Map<String, String>> customField = getCustomFields();
 		String defectsUrl = con.buildUrl("rest/api/latest/" + SEARCH_URI_PREFIX);
 		Map<String, String> map = new HashMap<String, String>();
@@ -50,45 +51,16 @@ public class SearchClient {
 		Response response = con.httpPost(defectsUrl, json.toString().getBytes(), map);
 		JSONObject result = new JSONObject(new String(response.getResponseData()));
 		JSONArray issues = result.getJSONArray("issues");
-		for (int i = 0; i < issues.length(); i++) {
-			JSONObject issue = issues.getJSONObject(i);
-			System.out.println(issue.toString());
-			JSONObject fields = issue.getJSONObject("fields");
-			System.out.println();
-			System.out.println();
-			System.out.println();
-			for (Object name : fields.toMap().keySet()) {
-				String realname = name.toString();
-				if (realname.startsWith("customfield_")) {
-					realname = customField.get(realname).get("name");
-				}
-				Object value = fields.get(name.toString());
-				if (!("progress".equals(realname) || "votes".equals(realname) || "watches".equals(realname)
-						|| "aggregateprogress".equals(realname) || "Development".equals(realname))) {
-					if (value instanceof JSONArray) {
-						if (((JSONArray) value).length() > 0) {
-							value = ((JSONArray) value).getJSONObject(0).getString("value");
-						} else {
-							// System.out.println(((JSONArray) value).toString(1));
-							value = "";
-						}
-					} else if (value instanceof JSONObject) {
-						if (((JSONObject) value).toMap().containsKey("value")) {
-							value = ((JSONObject) value).getString("value");
-						} else if (((JSONObject) value).toMap().containsKey("name")) {
-							value = ((JSONObject) value).getString("name");
-						} else {
-							System.out.println(((JSONObject) value).toString(1));
-						}
-					}
-					System.out.println("'" + realname + "' <--> '" + value + "'");
-				}
+		ArrayList<Issue> res = null;
+		if (issues.length() > 0 ) {
+			res = new ArrayList<Issue>(issues.length());
+			for (int i = 0; i < issues.length(); i++) {
+				res.add(Issue.parse(issues.getJSONObject(i), customField));
 			}
-			System.out.println();
-			System.out.println();
-			System.out.println();
 		}
-		return "";
+
+		SearchResult searchResult= new SearchResult(result.getInt("startAt"), result.getInt("maxResults"), result.getInt("total"), res);
+		return searchResult;
 	}
 
 	public Map<String, Map<String, String>> getCustomFields() throws Exception {
@@ -179,3 +151,43 @@ public class SearchClient {
 //    public Filter getFilter(long id);
 
 }
+
+
+
+//JSONObject issue = issues.getJSONObject(i);
+//System.out.println(issue.toString());
+//JSONObject fields = issue.getJSONObject("fields");
+//System.out.println();
+//System.out.println();
+//System.out.println();
+//for (Object name : fields.toMap().keySet()) {
+//	String realname = name.toString();
+//	if (realname.startsWith("customfield_")) {
+//		realname = customField.get(realname).get("name");
+//	}
+//	Object value = fields.get(name.toString());
+//	if (!("progress".equals(realname) || "votes".equals(realname) || "watches".equals(realname)
+//			|| "aggregateprogress".equals(realname) || "Development".equals(realname))) {
+//		if (value instanceof JSONArray) {
+//			if (((JSONArray) value).length() > 0) {
+//				value = ((JSONArray) value).getJSONObject(0).getString("value");
+//			} else {
+//				// System.out.println(((JSONArray) value).toString(1));
+//				value = "";
+//			}
+//		} else if (value instanceof JSONObject) {
+//			if (((JSONObject) value).toMap().containsKey("value")) {
+//				value = ((JSONObject) value).getString("value");
+//			} else if (((JSONObject) value).toMap().containsKey("name")) {
+//				value = ((JSONObject) value).getString("name");
+//			} else {
+//				System.out.println(((JSONObject) value).toString(1));
+//			}
+//		}
+//		System.out.println("'" + realname + "' <--> '" + value + "'");
+//	}
+//}
+//System.out.println();
+//System.out.println();
+//System.out.println();
+//}
