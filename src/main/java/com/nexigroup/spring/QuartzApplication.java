@@ -24,21 +24,10 @@ public class QuartzApplication {
 	@Autowired
 	private MappingConfig mapping;
 
-	public static void main(String[] args) throws Exception {
-
-		SpringApplication.run(QuartzApplication.class, args);
-	}
-
-	@Bean
-	public CommandLineRunner init() {
-		return (args) -> {
-
-			log.info("--->" + mapping.getSeverity());
-			log.info("--->" + mapping.getSeverityMap());
-
-		};
-
-	}
+//	public static void main(String[] args) throws Exception {
+//
+//		SpringApplication.run(QuartzApplication.class, args);
+//	}
 
 //	private static void onStartup() throws SchedulerException {
 //

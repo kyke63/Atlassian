@@ -21,7 +21,7 @@ import lombok.ToString;
 public class Entity {
 
 	private String type;
-	private Map<String, Field> fields = new HashMap();
+	private Map<String, Field> fields = new HashMap<>();
 
 	public Entity(String type) {
 		this.type = type;

@@ -24,26 +24,28 @@ public class QuartzConfig {
 //				.withDescription("Invoke Sample Job service...").build();
 //	}
 
-	@Bean
-	public JobDetailFactoryBean jobDetail() {
-		JobDetailFactoryBean jobDetailFactory = new JobDetailFactoryBean();
-		jobDetailFactory.setJobClass(SampleJob.class);
-		jobDetailFactory.setDescription("Invoke Sample Job service...");
-		jobDetailFactory.setDurability(true);
-		return jobDetailFactory;
-	}
+//	@Bean
+//	public JobDetailFactoryBean jobDetail() {
+//		JobDetailFactoryBean jobDetailFactory = new JobDetailFactoryBean();
+//		jobDetailFactory.setJobClass(SampleJob.class);
+//		jobDetailFactory.setDescription("Invoke Sample Job service...");
+//		jobDetailFactory.setDurability(true);
+//		return jobDetailFactory;
+//	}
 
 //	@Bean
 //	public Trigger trigger(JobDetail job) {
 //		return TriggerBuilder.newTrigger().forJob(job).withIdentity("Qrtz_Trigger").withDescription("Sample trigger")
 //				.withSchedule(simpleSchedule().repeatForever().withIntervalInHours(1)).build();
 //	}
-	@Bean
-	public SimpleTriggerFactoryBean trigger(JobDetail job) {
-		SimpleTriggerFactoryBean trigger = new SimpleTriggerFactoryBean();
-		trigger.setJobDetail(job);
-		trigger.setRepeatInterval(1000);
-		trigger.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
-		return trigger;
-	}
+
+//	@Bean
+//	public SimpleTriggerFactoryBean trigger(JobDetail job) {
+//		SimpleTriggerFactoryBean trigger = new SimpleTriggerFactoryBean();
+//		trigger.setJobDetail(job);
+//		trigger.setRepeatInterval(1000);
+//		trigger.setRepeatCount(SimpleTrigger.REPEAT_INDEFINITELY);
+//		return trigger;
+//	}
+
 }

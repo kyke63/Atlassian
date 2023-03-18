@@ -10,26 +10,25 @@ import com.nexigroup.spring.jira.infrastructure.Response;
 import com.nexigroup.spring.jira.infrastructure.RestConnectorJIRA;
 
 public class IssueClient {
-	
+
 	private RestConnectorJIRA con;
-	
+
 	public IssueClient() {
 		con = RestConnectorJIRA.getInstance();
 	}
-
 
 	/**
 	 * Creates new issue.
 	 *
 	 * @param json populated with data to create new issue
 	 * @return basicIssue with generated <code>issueKey</code>
-	 * @throws Exception 
+	 * @throws Exception
 	 * @throws RestClientException in case of problems (connectivity, malformed
 	 *                             messages, invalid argument, etc.)
 	 * @since com.atlassian.jira.rest.client.api 1.0, server 5.0
 	 */
-    public String updateAssignee(String issueKey, String assignee) throws Exception {
-		String defectsUrl = con.buildUrl("rest/api/latest/issue/"+issueKey+"/assignee");
+	public String updateAssignee(String issueKey, String assignee) throws Exception {
+		String defectsUrl = con.buildUrl("rest/api/latest/issue/" + issueKey + "/assignee");
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("Content-Type", "application/json");
 		map.put("Accept", "application/json");
@@ -38,31 +37,49 @@ public class IssueClient {
 		Response response = con.httpPut(defectsUrl, json.toString().getBytes(), map);
 //		JSONObject result = new String(response.getResponseData());
 		return new String(response.getResponseData());
-    }
+	}
 
 	public JSONObject updateIssue(String issueKey, JSONObject json) throws Exception {
-		String defectsUrl = con.buildUrl("rest/api/latest/issue/"+issueKey);
+		String defectsUrl = con.buildUrl("rest/api/latest/issue/" + issueKey);
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("Content-Type", "application/json");
 		map.put("Accept", "application/json");
 		Response response = con.httpPut(defectsUrl, json.toString().getBytes(), map);
 		JSONObject result = new JSONObject(new String(response.getResponseData()));
 		return result;
-    }
-    public JSONObject createIssue(JSONObject json) throws Exception {
-    	
+	}
+
+	public JSONObject createIssue(JSONObject json) throws Exception {
+
 		String defectsUrl = con.buildUrl("rest/api/latest/issue");
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("Content-Type", "application/json");
 		map.put("Accept", "application/json");
 
 		Response response = con.httpPost(defectsUrl, json.toString().getBytes(), map);
-		
+
 		JSONObject result = new JSONObject(new String(response.getResponseData()));
-		
-		
-    	return result;
-    }
+
+		return result;
+	}
+
+	public JSONObject createIssueMeta(String project) throws Exception {
+
+		String defectsUrl = con.buildUrl("rest/api/2/issue/createmeta");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("Content-Type", "application/json");
+		map.put("Accept", "application/json");
+
+		String queryString = "projectKeys=" + project;
+		queryString += "&issuetypeNames=Bug";
+		queryString += "&expand=projects.issuetypes.fields";
+
+		Response response = con.httpGet(defectsUrl, queryString, map);
+
+		JSONObject result = new JSONObject(new String(response.getResponseData()));
+
+		return result;
+	}
 
 	/**
 	 * Update an existing issue.

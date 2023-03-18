@@ -9,7 +9,7 @@ import org.quartz.JobExecutionException;
 import lombok.Setter;
 
 @Setter
-public class SampleJob implements Job {
+public class SampleJob {
 
 	// @Autowired
 	// private SampleJobService jobService;
