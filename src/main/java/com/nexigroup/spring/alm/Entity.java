@@ -28,7 +28,7 @@ public class Entity {
 	}
 
 	public void addField(Field field) {
-		fields.put(field.getName(), field);
+		fields.put(field.getName().toLowerCase(), field);
 	}
 
 	public Field getField(String name) {
@@ -40,6 +40,7 @@ public class Entity {
 		JSONArray arr = (JSONArray) json.get("Fields");
 		for (int i = 0; i < arr.length(); i++) {
 			Field field = new Field();
+//			System.out.println(arr.getJSONObject(i).toString(3));
 			field.parseJson(arr.getJSONObject(i));
 			addField(field);
 		}

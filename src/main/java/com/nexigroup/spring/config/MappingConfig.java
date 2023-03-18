@@ -12,7 +12,7 @@ import lombok.Getter;
 public class MappingConfig {
 
 	@Value("${severity}")
-	private Map<String, String> severity;
+	private String severity;
 	@Value("#{${severity}}")
 	private Map<String, String> severityMap;
 
