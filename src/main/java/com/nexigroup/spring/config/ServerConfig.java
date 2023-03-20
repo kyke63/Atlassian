@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Configuration
 @Getter
@@ -30,6 +31,9 @@ public class ServerConfig {
 	private String almDomain;
 	@Value("${alm.server.project}")
 	private String almProject;
+	
+	@Setter
+	private Boolean almLogin = false;
 
 	
 }

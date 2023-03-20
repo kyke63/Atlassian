@@ -18,9 +18,5 @@ public class ProxyConfig {
 	private String proxyPassword;
 	@Value("${http.nonProxyHosts}")
 	private String nonProxyHosts;
-	@Value("${qc.jira.mapper}")
-	private String qc_jira_mapper;
-	@Value("${jira.qc.mapper}")
-	private String jira_qc_mapper;
 
 }

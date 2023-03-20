@@ -24,9 +24,9 @@ public class Defects {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("Content-Type", "application/json");
 		map.put("Accept", "application/json");
-		String queryString = "start-index=1&page-size=5";
+		String queryString = "start-index=1&page-size=1";
 		if (query != null && !query.isEmpty())
-			queryString = "query=" + URLEncoder.encode(query, "UTF-8");
+			queryString += "&query=" + URLEncoder.encode(query, "UTF-8");
 		if (order != null && !order.isEmpty())
 			queryString += "&order-by=" + URLEncoder.encode("{"+order+"}", "UTF-8");
 

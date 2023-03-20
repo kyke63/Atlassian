@@ -89,7 +89,7 @@ public class Issue {
 	    		realname = customField.get(realname).get("name");
 	    	}
 
-        	fields.put(realname, new IssueField(
+        	fields.put(realname.toLowerCase(), new IssueField(
         			key,
         			realname,
         			null,

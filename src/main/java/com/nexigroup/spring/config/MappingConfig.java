@@ -16,6 +16,10 @@ public class MappingConfig {
 	private Map<String, String> severityMap;
 	@Value("#{${priority}}")
 	private Map<String, String> priorityMap;
+	@Value("#{${qc.jira.mapper}}")
+	private Map<String, String> qc_jira_mapper;
+//	@Value("#{${jira.qc.mapper}}")
+//	private Map<String, String> jira_qc_mapper;
 
 	@Setter
 	private Map<String, Object> fields;

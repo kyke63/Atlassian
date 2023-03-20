@@ -1,13 +1,6 @@
 package com.nexigroup.spring.quartz.config;
 
-import org.quartz.JobDetail;
-import org.quartz.SimpleTrigger;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.scheduling.quartz.JobDetailFactoryBean;
-import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
-
-import com.nexigroup.spring.quartz.SampleJob;
 
 @Configuration
 public class QuartzConfig {
